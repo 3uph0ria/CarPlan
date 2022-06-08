@@ -1,0 +1,80 @@
+﻿<Page x:Class="vcids.Pages.PageAddEditCars"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vcids.Pages"
+      mc:Ignorable="d" 
+      Title="PageAddEditCars"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      >
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock VerticalAlignment="Center"  Grid.Row="0"
+        Text="Добавление/редактирование автомобиля"
+  Style="{StaticResource MaterialDesignHeadline5TextBlock}" />
+        <TextBox 
+            Grid.Row="1"
+            Name="YearRelease"
+            Text="{Binding YearRelease}"
+            Width="600"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            VerticalAlignment="Center"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            materialDesign:HintAssist.Hint="Год выпуска"
+            Margin="0 0 20 0"
+            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+
+
+        <TextBox 
+            Grid.Row="3"
+            Name="Model"
+            Text="{Binding Model}"
+            Width="600"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            VerticalAlignment="Center"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            materialDesign:HintAssist.Hint="Модель"
+            Margin="0 0 20 0"
+            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+
+        <TextBox 
+            Grid.Row="5"
+            Name="Mark"
+            Text="{Binding Mark}"
+            Width="600"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            VerticalAlignment="Center"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            materialDesign:HintAssist.Hint="Марка"
+            Margin="0 0 20 0"
+            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+
+
+        <StackPanel VerticalAlignment="Center" Grid.Row="9"  HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Name="BtnAddservice" Click="BtnAddservice_Click" Content="Добавить" ></Button>
+            <Button Name="BtnBack"  Margin="10" Click="BtnBack_Click" Content="Назад" ></Button>
+        </StackPanel>
+    </Grid>
+</Page>
