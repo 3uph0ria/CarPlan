@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище CarPlanModelContainer" CdmEntityContainer="CarPlanEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище db_a88224_carplanbdModelContainer" CdmEntityContainer="CarPlanEntities">
     <EntitySetMapping Name="Cars">
-      <EntityTypeMapping TypeName="CarPlanModel.Cars">
+      <EntityTypeMapping TypeName="db_a88224_carplanbdModel.Cars">
         <MappingFragment StoreEntitySet="Cars">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdUser" ColumnName="IdUser" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Events">
-      <EntityTypeMapping TypeName="CarPlanModel.Events">
+      <EntityTypeMapping TypeName="db_a88224_carplanbdModel.Events">
         <MappingFragment StoreEntitySet="Events">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdCar" ColumnName="IdCar" />
@@ -25,7 +25,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Permissions">
-      <EntityTypeMapping TypeName="CarPlanModel.Permissions">
+      <EntityTypeMapping TypeName="db_a88224_carplanbdModel.Permissions">
         <MappingFragment StoreEntitySet="Permissions">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -33,7 +33,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sales">
-      <EntityTypeMapping TypeName="CarPlanModel.Sales">
+      <EntityTypeMapping TypeName="db_a88224_carplanbdModel.Sales">
         <MappingFragment StoreEntitySet="Sales">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdUser" ColumnName="IdUser" />
@@ -42,7 +42,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TypeEvents">
-      <EntityTypeMapping TypeName="CarPlanModel.TypeEvents">
+      <EntityTypeMapping TypeName="db_a88224_carplanbdModel.TypeEvents">
         <MappingFragment StoreEntitySet="TypeEvents">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -50,7 +50,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="CarPlanModel.Users">
+      <EntityTypeMapping TypeName="db_a88224_carplanbdModel.Users">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdPremission" ColumnName="IdPremission" />

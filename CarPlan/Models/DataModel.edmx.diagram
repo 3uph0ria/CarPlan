@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="68ae79d475dd4cd18261cdacc26d37a2" Name="Diagram1">
-        <EntityTypeShape EntityType="CarPlanModel.Cars" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarPlanModel.Events" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarPlanModel.Permissions" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarPlanModel.Sales" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarPlanModel.TypeEvents" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarPlanModel.Users" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <AssociationConnector Association="CarPlanModel.FK_Cars_Cars" ManuallyRouted="false" />
-        <AssociationConnector Association="CarPlanModel.FK_Cars_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="CarPlanModel.FK_Events_Cars" ManuallyRouted="false" />
-        <AssociationConnector Association="CarPlanModel.FK_Events_TypeEvents" ManuallyRouted="false" />
-        <AssociationConnector Association="CarPlanModel.FK_Users_Permissions" ManuallyRouted="false" />
-        <AssociationConnector Association="CarPlanModel.FK_Sales_Users" ManuallyRouted="false" />
+      <Diagram DiagramId="7fb7ca3e12154ec2af5913c5fa12347f" Name="Diagram1">
+        <EntityTypeShape EntityType="db_a88224_carplanbdModel.Cars" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a88224_carplanbdModel.Events" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a88224_carplanbdModel.Permissions" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a88224_carplanbdModel.Sales" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a88224_carplanbdModel.TypeEvents" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a88224_carplanbdModel.Users" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="db_a88224_carplanbdModel.FK_Cars_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a88224_carplanbdModel.FK_Cars_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a88224_carplanbdModel.FK_Events_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a88224_carplanbdModel.FK_Events_TypeEvents" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a88224_carplanbdModel.FK_Users_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a88224_carplanbdModel.FK_Sales_Users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
