@@ -22,41 +22,123 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
+
         <TextBlock
         Margin="10 0 0 0"
         VerticalAlignment="Center"
         Name="Header"
         Text="События"
         Style="{StaticResource MaterialDesignHeadline5TextBlock}" />
-        <DataGrid Grid.Row="1" Name="DGridClients" AutoGenerateColumns="False" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Тип события" Binding="{Binding TypeEvents.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Пробег" Binding="{Binding Distance}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"></DataGridTextColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="BtnEditClient" Click="BtnEditClient_Click">
-                                <materialDesign:PackIcon
-                                Kind="Pencil"/>
-                            </Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="BtndelService" Click="BtndelService_Click">
-                                <materialDesign:PackIcon
-                                Kind="Delete"/>
-                            </Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+
+        <TabControl
+            Grid.Row="1"
+              Style="{StaticResource MaterialDesignNavigatilRailTabControl}">
+                <TabItem
+                    Header="{materialDesign:PackIcon Kind=GasStation, Size=24}"
+                        Style="{StaticResource MaterialDesignNavigationRailTabItem}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Margin="10 0 0 0"
+                        VerticalAlignment="Center"
+                        Name="Header2"
+                        Text="Заправки"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}" />            
+
+                    <DataGrid Grid.Row="1" Name="DGridClients1" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Тип события" Binding="{Binding TypeEvents.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Пробег" Binding="{Binding Distance}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"></DataGridTextColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="BtnEditClient" Click="BtnEditClient_Click">
+                                            <materialDesign:PackIcon
+                                            Kind="Pencil"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="BtndelService" Click="BtndelService_Click">
+                                            <materialDesign:PackIcon
+                                            Kind="Delete"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </TabItem>
+                <TabItem
+                    Header="{materialDesign:PackIcon Kind=wrench, Size=24}"
+                    Style="{StaticResource MaterialDesignNavigationRailTabItem}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Margin="10 0 0 0"
+                        VerticalAlignment="Center"
+                        Name="Header3"
+                        Text="ТО"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}" />
+
+                    <DataGrid Grid.Row="1" Name="DGridClients2" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Тип события" Binding="{Binding TypeEvents.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Пробег" Binding="{Binding Distance}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Комментарий" Binding="{Binding Comment}"></DataGridTextColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="BtnEditClient" Click="BtnEditClient_Click">
+                                            <materialDesign:PackIcon
+                                            Kind="Pencil"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="BtndelService" Click="BtndelService_Click">
+                                            <materialDesign:PackIcon
+                                            Kind="Delete"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+
+
+
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#FF3C3C3C">
             <Button
                 Name="BtnBack"
                 Click="BtnBack_Click"

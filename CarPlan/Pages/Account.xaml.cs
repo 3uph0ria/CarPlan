@@ -82,5 +82,23 @@ namespace vcids.Pages
         {
             NavManager.MainFrame.Navigate(new PageBusiness());
         }
+
+        private void BtnAdwerts_Click(object sender, RoutedEventArgs e)
+        {
+            var users = CarPlanEntities.GetContext().Users.ToList();
+            users = users.Where(p => Convert.ToString(p.Id).Contains(Convert.ToString(CurrentUser.Id))).ToList();
+            var user = users.LastOrDefault();
+
+            if (user.IdPremission == 3)
+            {
+                NavManager.MainFrame.Navigate(new PageAdwerts());
+                
+            }
+            else
+            {
+                MessageBox.Show("Для просмотря яобъявление нужен бизнес аккаунт");
+                NavManager.MainFrame.Navigate(new PageBusiness());
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace vcids.Models
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> Distance { get; set; }
         public Nullable<int> Cost { get; set; }
+        public string Comment { get; set; }
     
         public virtual Cars Cars { get; set; }
         public virtual TypeEvents TypeEvents { get; set; }

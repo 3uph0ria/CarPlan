@@ -139,5 +139,15 @@ namespace vcids.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon ogAAAgB_ceA_960 {
+            get {
+                object obj = ResourceManager.GetObject("ogAAAgB_ceA_960", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

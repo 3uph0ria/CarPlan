@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище db_a88224_carplanbdModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adverts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Article" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Cars">
     <Key>
       <PropertyRef Name="Id" />
@@ -20,6 +32,7 @@
     <Property Name="Date" Type="datetime" />
     <Property Name="Distance" Type="int" />
     <Property Name="Cost" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="Permissions">
     <Key>
@@ -52,6 +65,18 @@
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Adverts_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Adverts" Type="Self.Adverts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adverts">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Cars_Cars">
     <End Role="Cars" Type="Self.Cars" Multiplicity="1" />
     <End Role="Cars1" Type="Self.Cars" Multiplicity="0..1" />
@@ -125,12 +150,17 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище db_a88224_carplanbdModelContainer">
+    <EntitySet Name="Adverts" EntityType="Self.Adverts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeEvents" EntityType="Self.TypeEvents" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Adverts_Users" Association="Self.FK_Adverts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Adverts" EntitySet="Adverts" />
+    </AssociationSet>
     <AssociationSet Name="FK_Cars_Cars" Association="Self.FK_Cars_Cars">
       <End Role="Cars" EntitySet="Cars" />
       <End Role="Cars1" EntitySet="Cars" />

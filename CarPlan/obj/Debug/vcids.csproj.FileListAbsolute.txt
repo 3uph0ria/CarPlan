@@ -134,3 +134,9 @@ D:\WebGit\CarPlan\CarPlan\obj\Debug\vcids.csproj.CoreCompileInputs.cache
 D:\WebGit\CarPlan\CarPlan\obj\Debug\vcids.csproj.CopyComplete
 D:\WebGit\CarPlan\CarPlan\obj\Debug\vcids.exe
 D:\WebGit\CarPlan\CarPlan\obj\Debug\vcids.pdb
+D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageAddEditAdwerts.g.cs
+D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageAdwerts.g.cs
+D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageMyAdwerts.g.cs
+D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageAddEditAdwerts.baml
+D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageAdwerts.baml
+D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageMyAdwerts.baml

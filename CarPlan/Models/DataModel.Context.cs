@@ -20,6 +20,7 @@ namespace vcids.Models
         {
         }
 
+
         public static CarPlanEntities context;
         public static CarPlanEntities GetContext()
         {
@@ -33,6 +34,7 @@ namespace vcids.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Adverts> Adverts { get; set; }
         public virtual DbSet<Cars> Cars { get; set; }
         public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Permissions> Permissions { get; set; }

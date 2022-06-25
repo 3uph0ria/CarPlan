@@ -31,6 +31,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
 
@@ -51,7 +52,14 @@
             IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledPasswordFieldPasswordBoxEnabledComboBox}"
             materialDesign:HintAssist.Hint="Пароль" />
 
-        <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <PasswordBox Grid.Row="4" Grid.Column="3"
+            Name="Password2"
+            Style="{StaticResource MaterialDesignFilledPasswordBox}"
+            VerticalAlignment="Center"
+            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledPasswordFieldPasswordBoxEnabledComboBox}"
+            materialDesign:HintAssist.Hint="Повторите пароль" />
+
+        <StackPanel Grid.Row="5" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Foreground="white" Content="Регистрация" Name="BtnSignIUAdmin" Click="BtnSignIUAdmin_Click" />
         </StackPanel>
         <TextBox Grid.Row="2" Grid.Column="3"

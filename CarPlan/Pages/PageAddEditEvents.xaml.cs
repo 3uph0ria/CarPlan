@@ -27,6 +27,7 @@ namespace vcids.Pages
         public PageAddEditEvents(Events selectClient)
         {
             InitializeComponent();
+            Comment.Visibility = Visibility.Hidden;
             if (selectClient != null)
             {
                 _ccurrnetClients = selectClient;
@@ -44,6 +45,7 @@ namespace vcids.Pages
             TypeEvents o = (TypeEvents)CBoxEvents.SelectedItem;
             _ccurrnetClients.IdType = o.Id;
             _ccurrnetClients.Date = DateTime.Now;
+            _ccurrnetClients.Comment = CBComment.Text;
 
             if (_ccurrnetClients.Id == 0)
                 CarPlanEntities.GetContext().Events.Add(_ccurrnetClients);
@@ -76,6 +78,18 @@ namespace vcids.Pages
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             NavManager.MainFrame.Navigate(new PageEvents(CurrentUser.IdCar));
+        }
+
+        private void CBoxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(CBoxEvents.Text != "ТО")
+            {
+                Comment.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Comment.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

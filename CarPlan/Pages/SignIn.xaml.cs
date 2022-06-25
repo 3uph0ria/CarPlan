@@ -62,7 +62,7 @@ namespace vcids.Pages
             Users searchuser = user.FirstOrDefault();
             if (searchuser == null)
             {
-                MessageBox.Show("Наверный логин или пароль", "внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Неверный логин или пароль", "внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

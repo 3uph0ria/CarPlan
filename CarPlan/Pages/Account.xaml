@@ -280,10 +280,10 @@
         <Grid Grid.Row="3" Background="#FF383838">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="70"></ColumnDefinition>
+                <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="170"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Button
@@ -299,9 +299,24 @@
                     Width="30" />
             </Button>
 
+            <Button
+                Grid.Column="1"
+                Name="BtnAdwerts"
+                Click="BtnAdwerts_Click"
+                Margin="10 0 0 0"
+                Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                ToolTip="MaterialDesignFloatingActionLightButton" Background="#FF267FFF" BorderBrush="#FF56A3FF">
+                <materialDesign:PackIcon
+                    Kind="Basket"
+                    Height="30"
+                    Foreground="White"
+                    Width="30" />
+            </Button>
+
 
             <Button
                 Grid.Column="4"
+                
                 Style="{StaticResource MaterialDesignRaisedButton}"
                 materialDesign:ButtonProgressAssist.Value="-1"
                 materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
@@ -309,7 +324,7 @@
                 Content="Business"
                 Name="Business"
                 Click="Business_Click"
-                Margin="2,0" Background="Red" BorderBrush="#FF12003A" Foreground="#DDFFFFFF" Height="35" />
+                Margin="10" Background="Red" BorderBrush="#FF12003A" Foreground="#DDFFFFFF" Height="35" />
         </Grid>
 
     </Grid>

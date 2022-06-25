@@ -64,9 +64,13 @@ namespace vcids.Pages
         {
             var events = CarPlanEntities.GetContext().Events.ToList();
             events = events.Where(p => Convert.ToString(p.IdCar).Contains(Convert.ToString(car))).ToList();
+            events = events.Where(p => Convert.ToString(p.IdType).Contains(Convert.ToString(1))).ToList();
+            DGridClients1.ItemsSource = events;
 
-
-            DGridClients.ItemsSource = events;
+            events = CarPlanEntities.GetContext().Events.ToList();
+            events = events.Where(p => Convert.ToString(p.IdCar).Contains(Convert.ToString(car))).ToList();
+            events = events.Where(p => Convert.ToString(p.IdType).Contains(Convert.ToString(2))).ToList();
+            DGridClients2.ItemsSource = events;
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

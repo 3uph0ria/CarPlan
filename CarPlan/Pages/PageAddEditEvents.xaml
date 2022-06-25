@@ -40,10 +40,44 @@
             Margin="0 0 20 0"
             VerticalAlignment="Center"
             Grid.Row="2"
+            SelectionChanged="CBoxEvents_SelectionChanged"
             SelectedItem="{Binding TypeEvents.Id}"
             x:Name="CBoxEvents"
             DisplayMemberPath="Name"
             />
+
+        <Grid   Width="600" Grid.Row="3" Name="Comment">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock VerticalAlignment="Center">Комментарий</TextBlock>
+
+            <ComboBox
+            Grid.Column="1"
+            Width="300"
+            Grid.Row="4"
+            Margin="0 0 20 0"
+            Name="CBComment"
+            Text="{Binding Cpmment}"
+            materialDesign:HintAssist.Hint="Комментарий">
+
+                <ComboBoxItem
+                            Content="Замена моторного масла" />
+                <ComboBoxItem
+                            Content="Замена тормозной жидкости" />
+                <ComboBoxItem
+                            Content="Замена толпливрооо фильтра" />
+                <ComboBoxItem
+                            Content="Зачега тормозных колодок" />
+                <ComboBoxItem
+                            Content="Замена свечей зажигания" />
+                <ComboBoxItem
+                            Content="Замена моторных ремней" />
+            </ComboBox>
+
+        </Grid>
 
         <TextBox 
             Grid.Row="4"

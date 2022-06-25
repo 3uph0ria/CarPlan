@@ -30,12 +30,15 @@ namespace vcids.Pages
         private void BtnSignIUAdmin_Click(object sender, RoutedEventArgs e)
         {
 
+
             StringBuilder erros = new StringBuilder();
 
             if (String.IsNullOrEmpty(Login.Text))
                 erros.AppendLine("Введите логин");
             else if (String.IsNullOrEmpty(Password.Password))
                 erros.AppendLine("Введите пароль");
+            else if (Password.Password != Password2.Password)
+                erros.AppendLine("Введенный пароли не совпадают");
 
             if (erros.Length > 0)
             {

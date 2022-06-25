@@ -96,6 +96,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageAddEditAdwerts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageAddEditCars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,11 +108,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageAdwerts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageBusiness.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMyAdwerts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +138,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Adverts.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cars.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -162,17 +177,26 @@
     <Compile Include="Pages\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageAddEditAdwerts.xaml.cs">
+      <DependentUpon>PageAddEditAdwerts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageAddEditCars.xaml.cs">
       <DependentUpon>PageAddEditCars.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageAddEditEvents.xaml.cs">
       <DependentUpon>PageAddEditEvents.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageAdwerts.xaml.cs">
+      <DependentUpon>PageAdwerts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageBusiness.xaml.cs">
       <DependentUpon>PageBusiness.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageEvents.xaml.cs">
       <DependentUpon>PageEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMyAdwerts.xaml.cs">
+      <DependentUpon>PageMyAdwerts.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageSignUp.xaml.cs">
       <DependentUpon>PageSignUp.xaml</DependentUpon>
@@ -268,6 +292,7 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\ogAAAgB_ceA-960.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

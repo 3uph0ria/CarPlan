@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="db_a88224_carplanbdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adverts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Article" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Adverts_Users" FromRole="Adverts" ToRole="Users" />
+  </EntityType>
   <EntityType Name="Cars">
     <Key>
       <PropertyRef Name="Id" />
@@ -24,6 +37,7 @@
     <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="Distance" Type="Int32" />
     <Property Name="Cost" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Cars" Relationship="Self.FK_Events_Cars" FromRole="Events" ToRole="Cars" />
     <NavigationProperty Name="TypeEvents" Relationship="Self.FK_Events_TypeEvents" FromRole="Events" ToRole="TypeEvents" />
   </EntityType>
@@ -60,10 +74,23 @@
     <Property Name="IdPremission" Type="Int32" Nullable="false" />
     <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Adverts" Relationship="Self.FK_Adverts_Users" FromRole="Users" ToRole="Adverts" />
     <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Users" FromRole="Users" ToRole="Cars" />
     <NavigationProperty Name="Permissions" Relationship="Self.FK_Users_Permissions" FromRole="Users" ToRole="Permissions" />
     <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Users" FromRole="Users" ToRole="Sales" />
   </EntityType>
+  <Association Name="FK_Adverts_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Adverts" Type="Self.Adverts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adverts">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Cars_Cars">
     <End Role="Cars" Type="Self.Cars" Multiplicity="1" />
     <End Role="Cars1" Type="Self.Cars" Multiplicity="0..1" />
@@ -137,12 +164,17 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="CarPlanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adverts" EntityType="Self.Adverts" />
     <EntitySet Name="Cars" EntityType="Self.Cars" />
     <EntitySet Name="Events" EntityType="Self.Events" />
     <EntitySet Name="Permissions" EntityType="Self.Permissions" />
     <EntitySet Name="Sales" EntityType="Self.Sales" />
     <EntitySet Name="TypeEvents" EntityType="Self.TypeEvents" />
     <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_Adverts_Users" Association="Self.FK_Adverts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Adverts" EntitySet="Adverts" />
+    </AssociationSet>
     <AssociationSet Name="FK_Cars_Cars" Association="Self.FK_Cars_Cars">
       <End Role="Cars" EntitySet="Cars" />
       <End Role="Cars1" EntitySet="Cars" />
