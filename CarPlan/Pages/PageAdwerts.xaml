@@ -81,7 +81,7 @@
                                     <TextBlock
                                         Grid.Row="1"
                                         Margin="20"
-                                        Text="{Binding Article, StringFormat={}Артикль: {0}}"
+                                        Text="{Binding Article, StringFormat={}Артикул: {0}}"
                                         Style="{StaticResource MaterialDesignHeadline6TextBlock}"                             >
                                     </TextBlock>
                                     <TextBlock
@@ -96,13 +96,11 @@
                                         Text="{Binding Cost, StringFormat={}Цена: {0}руб.}"
                                         Style="{StaticResource MaterialDesignHeadline6TextBlock}"                              >
                                     </TextBlock>
-                                    <TextBlock
-                                        Margin="20"
-                                        Grid.Row="4"
-                                        Text="{Binding Phone, StringFormat={}Телефон: {0}}"
-                                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"                              >
-                                    </TextBlock>
-                                    
+
+                                    <StackPanel Orientation="Horizontal" Grid.Row="4">
+                                        <Button Name="BtnFeedBack" Click="BtnFeedBack_Click">Откликнуться</Button>
+                                    </StackPanel>
+
                                 </Grid>
 
                             </StackPanel>
@@ -112,7 +110,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="#FF383838">
             <Button
                 Name="BtnBack"
                 Click="BtnBack_Click"

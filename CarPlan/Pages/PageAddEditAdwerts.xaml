@@ -74,6 +74,7 @@
             Grid.Row="4"
             Name="Phone"
             Text="{Binding Phone}"
+            MaxLength="11"
             Width="600"
             Style="{StaticResource MaterialDesignFilledTextBox}"
             VerticalAlignment="Center"

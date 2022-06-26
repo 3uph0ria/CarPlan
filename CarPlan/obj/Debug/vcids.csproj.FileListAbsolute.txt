@@ -140,3 +140,4 @@ D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageMyAdwerts.g.cs
 D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageAddEditAdwerts.baml
 D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageAdwerts.baml
 D:\WebGit\CarPlan\CarPlan\obj\Debug\Pages\PageMyAdwerts.baml
+D:\WebGit\CarPlan\CarPlan\obj\Debug\vcids.csproj.ResolveComReference.cache

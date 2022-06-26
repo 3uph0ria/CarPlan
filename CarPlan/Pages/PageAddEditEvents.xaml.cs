@@ -27,6 +27,7 @@ namespace vcids.Pages
         public PageAddEditEvents(Events selectClient)
         {
             InitializeComponent();
+            CBComment.Text = "Заправка";
             Comment.Visibility = Visibility.Hidden;
             if (selectClient != null)
             {
@@ -41,6 +42,25 @@ namespace vcids.Pages
 
         private void BtnAddservice_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder erros = new StringBuilder();
+
+            long p;
+            bool isNumeric = long.TryParse(Distance.Text, out p);
+
+            long c;
+            bool isNumeric2 = long.TryParse(Cost.Text, out c);
+
+
+
+            if (isNumeric == false || isNumeric2 == false)
+                erros.AppendLine("В полях 'Цена' и 'Дистанция' должны быть тольдцо цифры");
+
+            if (erros.Length > 0)
+            {
+                MessageBox.Show(erros.ToString());
+                return;
+            }
+
             _ccurrnetClients.IdCar = CurrentUser.IdCar;
             TypeEvents o = (TypeEvents)CBoxEvents.SelectedItem;
             _ccurrnetClients.IdType = o.Id;
@@ -82,7 +102,7 @@ namespace vcids.Pages
 
         private void CBoxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(CBoxEvents.Text != "ТО")
+            if(CBoxEvents.SelectedIndex == 1)
             {
                 Comment.Visibility = Visibility.Visible;
             }

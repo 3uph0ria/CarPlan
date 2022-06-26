@@ -39,6 +39,26 @@ namespace vcids.Pages
         {
             _ccurrnetClients.IdUser = CurrentUser.Id;
 
+            StringBuilder erros = new StringBuilder();
+
+            long p;
+            bool isNumeric = long.TryParse(Phone.Text, out p);
+
+            long c;
+            bool isNumeric2 = long.TryParse(Cost.Text, out c);
+
+       
+
+            if (isNumeric == false || isNumeric2 == false)
+                erros.AppendLine("В полях 'Цена' и 'Телефон' должны быть тольдцо цифры");
+           
+
+            if (erros.Length > 0)
+            {
+                MessageBox.Show(erros.ToString());
+                return;
+            }
+
 
             try
             {

@@ -49,5 +49,11 @@ namespace vcids.Pages
         {
             NavManager.MainFrame.Navigate(new PageMyAdwerts());
         }
+
+        private void BtnFeedBack_Click(object sender, RoutedEventArgs e)
+        {
+            var customer = (sender as Button).DataContext as Adverts;
+            MessageBox.Show("Контакты для связи с продавцом тел: " + customer.Phone);
+        }
     }
 }

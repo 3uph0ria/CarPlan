@@ -50,5 +50,30 @@ namespace vcids.Pages
         {
             NavManager.MainFrame.Navigate(new PageAddEditAdwerts(null));
         }
+
+        private void BtnEditClient_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.MainFrame.Navigate(new PageAddEditAdwerts((sender as Button).DataContext as Adverts));
+        }
+
+        private void BtndelService_Click(object sender, RoutedEventArgs e)
+        {
+            var car = (sender as Button).DataContext as Adverts;
+
+            if (MessageBox.Show("Вы дейстивительно хотите удалить объявление '" + car.Name + "'?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    CarPlanEntities.GetContext().Adverts.Remove(car);
+                    CarPlanEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Объявление успешно удалено");
+                    NavManager.MainFrame.Navigate(new PageMyAdwerts());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

@@ -133,9 +133,61 @@
                 </Grid>
 
             </TabItem>
+            <TabItem
+                    Header="{materialDesign:PackIcon Kind=ChartAreasplineVariant, Size=24}"
+                    Style="{StaticResource MaterialDesignNavigationRailTabItem}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.ColumnSpan="3"
+                        Margin="10 0 0 0"
+                        VerticalAlignment="Center"
+                        Name="Header4"
+                        Text="Формирование отчета по событиям"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}" />
+
+                    <DatePicker
+                        Grid.Row="1"
+                        Width="120"
+                        SelectedDateChanged="DateStart_SelectedDateChanged"
+                        Name="DateStart"
+                        materialDesign:HintAssist.Hint="Дата начала"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+
+                    <DatePicker
+                        Grid.Row="2"
+                        Width="120"
+                        SelectedDateChanged="DateEnd_SelectedDateChanged"
+                        Name="DateEnd"
+                        materialDesign:HintAssist.Hint="Дата окончания"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+
+                    <DataGrid Grid.Row="3"  Grid.ColumnSpan="3" Name="DGridClients3" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Тип события" Binding="{Binding TypeEvents.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Пробег" Binding="{Binding Distance}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Комментарий" Binding="{Binding Comment}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+
+            </TabItem>
         </TabControl>
-
-
 
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#FF3C3C3C">
@@ -163,6 +215,19 @@
                     Foreground="White"
                     Width="30" />
             </Button>
+            <Button
+                Name="BtnReport"
+                Click="BtnReport_Click"
+                Margin="10 0 0 0"
+                Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                ToolTip="MaterialDesignFloatingActionLightButton" Background="#FF07AC3C" BorderBrush="#FF09B002">
+                <materialDesign:PackIcon
+                    Kind="ChartAreasplineVariant"
+                    Height="30"
+                    Foreground="White"
+                    Width="30" />
+            </Button>
+
         </StackPanel>
     </Grid>
 </Page>

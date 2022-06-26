@@ -71,6 +71,7 @@
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
                                     </Grid.RowDefinitions>
 
                                     <TextBlock
@@ -101,6 +102,18 @@
                                         Text="{Binding Phone, StringFormat={}Телефон: {0}}"
                                         Style="{StaticResource MaterialDesignHeadline6TextBlock}"                              >
                                     </TextBlock>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Row="5">
+                                        <Button Name="BtnEditClient" Click="BtnEditClient_Click" Margin="5">
+                                            <materialDesign:PackIcon
+                                            Kind="Pencil"/>
+                                        </Button>
+                                        <Button Name="BtndelService" Click="BtndelService_Click">
+                                            <materialDesign:PackIcon
+                                            Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                    
 
                                 </Grid>
 
