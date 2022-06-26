@@ -24,6 +24,7 @@ namespace vcids.Pages
     public partial class PageAddEditEvents : Page
     {
         private Events _ccurrnetClients = new Events();
+        public Events _selectClient = new Events();
         public PageAddEditEvents(Events selectClient)
         {
             InitializeComponent();
@@ -32,8 +33,19 @@ namespace vcids.Pages
             if (selectClient != null)
             {
                 _ccurrnetClients = selectClient;
+                _selectClient = selectClient;
+
                 CBoxEvents.SelectedItem = selectClient.TypeEvents;
             }
+            else
+            {
+                _selectClient = null;
+            }
+
+            if (_selectClient == null)
+                Date.Visibility = Visibility.Hidden;
+            else
+                Date.Visibility = Visibility.Visible;
 
             DataContext = _ccurrnetClients;
 
