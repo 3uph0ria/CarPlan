@@ -42,7 +42,7 @@
                 materialDesign:HintAssist.Hint="Поиск"
                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
         
-        <ListView Grid.Row="2"  x:Name="ListServices" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Left" Grid.RowSpan="3">
+        <ListView Grid.Row="2"  x:Name="ListServices" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Left">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
