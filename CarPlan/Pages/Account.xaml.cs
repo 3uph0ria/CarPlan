@@ -26,6 +26,42 @@ namespace vcids.Pages
         {
             InitializeComponent();
             Update();
+
+            var cars = CarPlanEntities.GetContext().Cars.ToList();
+            cars = cars.Where(p => Convert.ToString(p.IdUser).Contains(Convert.ToString(CurrentUser.Id))).ToList();
+            StringBuilder alerts = new StringBuilder();
+
+            foreach(var car in cars)
+            {
+                var events = CarPlanEntities.GetContext().Events.ToList();
+                events = events.Where(p => Convert.ToString(p.IdCar).Contains(Convert.ToString(car.Id))).ToList();
+                events = events.Where(p => Convert.ToString(p.IdType).Contains(Convert.ToString(2))).ToList();
+                var eventTmp = events.LastOrDefault();
+
+               
+
+                if (eventTmp != null)
+                {
+                    var result = (DateTime.Now - Convert.ToDateTime(eventTmp.Date)).Duration();
+
+
+                    if (result.Days >= 30)
+                    {
+                        alerts.AppendLine("Автомобилю (марка - " + car.Mark + ", модель - " + car.Model + ", год выпуска - " + car.YearRelease + ") необходимо выполнуть ТО. Последние ТО было сделано: " + result.Days + " дней назад" + "(" + eventTmp.Date + ")");
+                    }
+
+                }
+                else
+                {
+                    alerts.AppendLine("Автомобилю (марка - " + car.Mark + ", модель - " + car.Model + ", год выпуска - " + car.YearRelease + ") необходимо указать дату последнего ТО.");
+                }
+            }
+ 
+            if(alerts.Length > 1)
+            {
+                MessageBox.Show(alerts + "");
+            }
+
         }
 
         private void BtnEvent_Click(object sender, RoutedEventArgs e)

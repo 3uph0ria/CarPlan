@@ -66,7 +66,16 @@ namespace vcids.Pages
                 return;
             }
 
-            CurrentUser.PermissionName = searchuser.Permissions.Name;
+            if(searchuser.Permissions == null)
+            {
+                CurrentUser.PermissionName = "Default";
+            }
+            else
+            {
+                CurrentUser.PermissionName = searchuser.Permissions.Name;
+            }
+
+            
             CurrentUser.Id = searchuser.Id;
 
             if(searchuser.IdPremission == 1)

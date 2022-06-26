@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\WebGit\CarPlan\CarPlan\App.xaml
-121014180751
+13-1195961313
 2-1890902742
-301128742050
+321638507839
 281152057008
-MainWindow.xaml;Pages\Account.xaml;Pages\PageAddEditAdwerts.xaml;Pages\PageAddEditCars.xaml;Pages\PageAddEditEvents.xaml;Pages\PageAdwerts.xaml;Pages\PageBusiness.xaml;Pages\PageEvents.xaml;Pages\PageMyAdwerts.xaml;Pages\PageSignUp.xaml;Pages\PageUsers.xaml;Pages\SignIn.xaml;
+MainWindow.xaml;Pages\Account.xaml;Pages\PageAddEditAdwerts.xaml;Pages\PageAddEditCars.xaml;Pages\PageAddEditEvents.xaml;Pages\PageAdwerts.xaml;Pages\PageBusiness.xaml;Pages\PageEvents.xaml;Pages\PageMyAdwerts.xaml;Pages\PageProfile.xaml;Pages\PageSignUp.xaml;Pages\PageUsers.xaml;Pages\SignIn.xaml;
 
-True
+False
 

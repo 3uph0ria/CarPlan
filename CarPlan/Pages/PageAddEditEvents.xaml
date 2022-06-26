@@ -29,7 +29,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock VerticalAlignment="Center"  Grid.Row="0"
-        Text="Добавление/редактирование товара"
+        Text="Добавление/редактирование события"
   Style="{StaticResource MaterialDesignHeadline5TextBlock}" />
         
 
@@ -89,6 +89,19 @@
             AcceptsReturn="True"
             TextWrapping="Wrap"
             materialDesign:HintAssist.Hint="Пробег"
+            Margin="0 0 20 0"
+            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+
+        <TextBox 
+            Grid.Row="5"
+            Name="Date"
+            Text="{Binding Date}"
+            Width="600"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            VerticalAlignment="Center"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            materialDesign:HintAssist.Hint="Дата"
             Margin="0 0 20 0"
             IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
 

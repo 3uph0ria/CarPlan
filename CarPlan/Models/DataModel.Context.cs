@@ -20,7 +20,6 @@ namespace vcids.Models
         {
         }
 
-
         public static CarPlanEntities context;
         public static CarPlanEntities GetContext()
         {
@@ -37,6 +36,7 @@ namespace vcids.Models
         public virtual DbSet<Adverts> Adverts { get; set; }
         public virtual DbSet<Cars> Cars { get; set; }
         public virtual DbSet<Events> Events { get; set; }
+        public virtual DbSet<FeedBack> FeedBack { get; set; }
         public virtual DbSet<Permissions> Permissions { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
         public virtual DbSet<TypeEvents> TypeEvents { get; set; }

@@ -19,6 +19,8 @@ namespace vcids.Models
         {
             this.Adverts = new HashSet<Adverts>();
             this.Cars = new HashSet<Cars>();
+            this.FeedBack = new HashSet<FeedBack>();
+            this.FeedBack1 = new HashSet<FeedBack>();
             this.Sales = new HashSet<Sales>();
         }
     
@@ -31,6 +33,10 @@ namespace vcids.Models
         public virtual ICollection<Adverts> Adverts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cars> Cars { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FeedBack> FeedBack { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FeedBack> FeedBack1 { get; set; }
         public virtual Permissions Permissions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales> Sales { get; set; }

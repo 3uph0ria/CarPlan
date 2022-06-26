@@ -55,5 +55,11 @@ namespace vcids.Pages
             var customer = (sender as Button).DataContext as Adverts;
             MessageBox.Show("Контакты для связи с продавцом тел: " + customer.Phone);
         }
+
+        private void BtnProfilek_Click(object sender, RoutedEventArgs e)
+        {
+            var profile = (sender as Button).DataContext as Adverts;
+            NavManager.MainFrame.Navigate(new PageProfile(profile.IdUser));
+        }
     }
 }

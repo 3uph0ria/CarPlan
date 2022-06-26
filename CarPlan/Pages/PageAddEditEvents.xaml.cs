@@ -64,11 +64,13 @@ namespace vcids.Pages
             _ccurrnetClients.IdCar = CurrentUser.IdCar;
             TypeEvents o = (TypeEvents)CBoxEvents.SelectedItem;
             _ccurrnetClients.IdType = o.Id;
-            _ccurrnetClients.Date = DateTime.Now;
             _ccurrnetClients.Comment = CBComment.Text;
 
             if (_ccurrnetClients.Id == 0)
+            {
+                _ccurrnetClients.Date = DateTime.Now;
                 CarPlanEntities.GetContext().Events.Add(_ccurrnetClients);
+            }
 
             try
             {
